@@ -3,7 +3,6 @@ import sys
 import serial
 
 port=sys.argv[1]
-print(port)
 if port is 'n':
         port = '/dev/tty.usbserial-DN05Z2JS'
 print(port)

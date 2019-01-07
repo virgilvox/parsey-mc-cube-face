@@ -1,7 +1,14 @@
 import os
+import sys
 import serial
 
-ser = serial.Serial('/dev/tty.usbserial-DN05Z2JS', 115200)  # open serial port
+port=sys.argv[1]
+print(port)
+if port is 'n':
+        port = '/dev/tty.usbserial-DN05Z2JS'
+print(port)
+
+ser = serial.Serial(port, 115200)  # open serial port
 print(ser.name)         # check which port was really used
 ser.write('MFU\r\n')     # write a string
 s = ser.read(512)
